@@ -11,7 +11,7 @@ angular.module('merchello.services').service('dateHelper', [function() {
     this.convertToIsoDate = function(dateString, dateFormat) {
         // date formats in merchello start with MM, dd, or yyyy
         if(dateString.indexOf('/') === -1) {
-            dateString = dateString.replace(/-/g, '/');
+            dateString = dateString.replace(/[-.]/g, '/');
         }
         var splitDate = dateString.split('/');
         var date;
